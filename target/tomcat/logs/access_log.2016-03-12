@@ -1,0 +1,13 @@
+127.0.0.1 - - [12/Mar/2016:11:00:18 +0700] "GET /student_final_pro/ HTTP/1.1" 200 52 http-bio-8080-exec-1 100
+127.0.0.1 - - [12/Mar/2016:11:00:18 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
+127.0.0.1 - - [12/Mar/2016:11:00:24 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 21815 http-bio-8080-exec-4 652
+127.0.0.1 - - [12/Mar/2016:11:00:25 +0700] "GET /student_final_pro/resources/js/map.js HTTP/1.1" 304 - http-bio-8080-exec-5 104
+127.0.0.1 - - [12/Mar/2016:11:00:25 +0700] "GET /student_final_pro/resources/js/overlay-text.js HTTP/1.1" 304 - http-bio-8080-exec-6 102
+127.0.0.1 - - [12/Mar/2016:11:00:25 +0700] "GET /student_final_pro/resources/css/map.css HTTP/1.1" 304 - http-bio-8080-exec-7 165
+127.0.0.1 - - [12/Mar/2016:11:02:07 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 21817 http-bio-8080-exec-1 1039
+127.0.0.1 - - [12/Mar/2016:11:02:59 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 21817 http-bio-8080-exec-1 50
+127.0.0.1 - - [12/Mar/2016:11:04:58 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 21817 http-bio-8080-exec-8 48
+127.0.0.1 - - [12/Mar/2016:11:05:32 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 21817 http-bio-8080-exec-2 62
+127.0.0.1 - - [12/Mar/2016:11:08:39 +0700] "GET /student_final_pro/searchinfo?value=a2&type=0 HTTP/1.1" 200 17534 http-bio-8080-exec-9 60
+127.0.0.1 - - [12/Mar/2016:11:09:46 +0700] "GET /student_final_pro/searchinfo?value=a2&type=0 HTTP/1.1" 200 17534 http-bio-8080-exec-7 56
+127.0.0.1 - - [12/Mar/2016:11:14:39 +0700] "GET /student_final_pro/test HTTP/1.1" 200 101 http-bio-8080-exec-3 120

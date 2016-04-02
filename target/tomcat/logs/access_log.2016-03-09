@@ -1,0 +1,4 @@
+127.0.0.1 - - [09/Mar/2016:23:02:07 +0700] "GET /student_final_pro/ HTTP/1.1" 200 52 http-bio-8080-exec-1 109
+127.0.0.1 - - [09/Mar/2016:23:02:08 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+127.0.0.1 - - [09/Mar/2016:23:02:14 +0700] "GET /student_final_pro/test HTTP/1.1" 500 63746 http-bio-8080-exec-4 425
+127.0.0.1 - - [09/Mar/2016:23:05:43 +0700] "GET /student_final_pro/test HTTP/1.1" 200 89 http-bio-8080-exec-1 1330

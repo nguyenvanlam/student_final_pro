@@ -1,0 +1,22 @@
+.lbl_footer {
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	text-align: center;
+}
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+}
+
+div.limit {
+    max-width:20px;
+    margin: auto;
+}
+

@@ -1,0 +1,17 @@
+127.0.0.1 - - [03/Mar/2016:22:08:42 +0700] "GET /student_final_pro/ HTTP/1.1" 200 52 http-bio-8080-exec-1 167
+127.0.0.1 - - [03/Mar/2016:22:08:42 +0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-2 1294
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-4 1494
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/resources/js/map.js HTTP/1.1" 200 3662 http-bio-8080-exec-5 8
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/resources/js/jquery-1.12.0.min.js HTTP/1.1" 200 97365 http-bio-8080-exec-6 36
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/resources/js/overlay-text.js HTTP/1.1" 200 1605 http-bio-8080-exec-9 39
+127.0.0.1 - - [03/Mar/2016:22:08:51 +0700] "GET /student_final_pro/resources/css/map.css HTTP/1.1" 200 949 http-bio-8080-exec-7 111
+127.0.0.1 - - [03/Mar/2016:22:09:26 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-7 57
+127.0.0.1 - - [03/Mar/2016:22:10:22 +0700] "GET /student_final_pro/searchinfo?value=a2&type=0 HTTP/1.1" 200 16766 http-bio-8080-exec-7 67
+127.0.0.1 - - [03/Mar/2016:22:11:15 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-2 532
+127.0.0.1 - - [03/Mar/2016:22:11:15 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-1 549
+127.0.0.1 - - [03/Mar/2016:22:11:25 +0700] "GET /student_final_pro/view/map_utc/1 HTTP/1.1" 200 16436 http-bio-8080-exec-4 42
+127.0.0.1 - - [03/Mar/2016:22:11:25 +0700] "GET /student_final_pro/resources/css/map.css HTTP/1.1" 200 949 http-bio-8080-exec-6 12
+127.0.0.1 - - [03/Mar/2016:22:11:25 +0700] "GET /student_final_pro/resources/js/jquery-1.12.0.min.js HTTP/1.1" 200 97365 http-bio-8080-exec-8 8
+127.0.0.1 - - [03/Mar/2016:22:11:25 +0700] "GET /student_final_pro/resources/js/map.js HTTP/1.1" 200 3612 http-bio-8080-exec-3 11
+127.0.0.1 - - [03/Mar/2016:22:11:25 +0700] "GET /student_final_pro/resources/js/overlay-text.js HTTP/1.1" 200 1588 http-bio-8080-exec-9 11
