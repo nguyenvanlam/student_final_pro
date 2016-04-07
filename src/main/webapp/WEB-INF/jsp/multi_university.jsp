@@ -12,7 +12,9 @@
     <ul class = "main-nav-ul">
         <li><a href="#">Danh sách trường học</a>
             <ul>
-                <li><a href="#">Đại học quốc gia</a></li>
+            	<li><a href="${baseUrl}/view/1">Đại học GTVT Hà Nội</a></li>
+                <li><a href="${baseUrl}/view/2">Đại học quốc gia</a></li>
+                <li><a href="${baseUrl}/view/3">Đại học Sư Phạm Hà Nội</a></li>
                 <li><a href="#">Đại học bách khoa</a></li>
                 
             </ul>

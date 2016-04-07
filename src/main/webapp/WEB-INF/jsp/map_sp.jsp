@@ -148,7 +148,7 @@
 		  $( "#pos1" ).autocomplete({
 		    source: arrLabel, 
 		    open: function() { 
-		        $('#pos1').autocomplete("widget").width(200);
+		        $('#pos1').autocomplete("widget").width(300);
 		    }  
 		  });
 		});
@@ -156,7 +156,7 @@
 			  $( "#pos2" ).autocomplete({
 			    source: arrLabel,
 			    open: function() { 
-			        $('#pos2').autocomplete("widget").width(200) 
+			        $('#pos2').autocomplete("widget").width(300) ;
 			    }  
 			  });
 		});

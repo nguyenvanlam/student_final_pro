@@ -25,7 +25,7 @@ public class MapController extends BaseController{
 	@RequestMapping(value = "/view/{idUniversity}")
 	public ModelAndView setDataForView(Device device, @PathVariable("idUniversity") int idUniversity, 
 			HttpSession session, HttpServletRequest request) {
-		 
+		String baseUrl = getBaseUrl(request);
 		String viewName = "";
 		//get device
 		viewName = detectDevice(device);
@@ -35,7 +35,7 @@ public class MapController extends BaseController{
 		List<Line> lsLineOb = new ArrayList<Line>();
 		lsLineOb = mapLogic.getLineObj(idUniversity);
 		mapView.addObject("lsLineOb", lsLineOb);
-		
+		mapView.addObject("baseUrl", baseUrl);
 		session.setAttribute("id_university", idUniversity);
 		return mapView;
 	}

@@ -23,7 +23,7 @@ ul li a {
   color: #fff;
 }
  
-ul li a:hover { background: #2c3e50;}
+ul li a:hover { background: rgba(121, 165, 162, 1.00);}
 
 li:hover > ul {
   display: block;
@@ -31,8 +31,8 @@ li:hover > ul {
 }
 li:hover li { float: none; }
  
-li:hover a { background: #1bc2a2; }
-li:hover li a:hover { background: #2c3e50; }
+li:hover a { background: rgba(121, 165, 162, 1.00); }
+li:hover li a:hover { background: rgba(121, 165, 162, 1.00); }
 .main-navigation li ul li { border-top: 0; }
 
 ul ul ul {

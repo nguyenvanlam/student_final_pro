@@ -24,6 +24,7 @@ public class SearchController extends BaseController{
 	
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public ModelAndView search(Device device, HttpServletRequest request, HttpSession session) {
+		String baseUrl = getBaseUrl(request);
 		String viewName = "";
 		viewName = detectDevice(device);
 		ModelAndView map = null;
@@ -36,6 +37,7 @@ public class SearchController extends BaseController{
 				// init map
 				MapLogic mapLogic = new MapLogic();
 				map = mapLogic.initMap(viewName, idUniversity);
+				map.addObject("baseUrl", baseUrl);
 				SearchLogic searchLogic = new SearchLogic();
 				
 				if(request.getParameter("func").equals("1")) {

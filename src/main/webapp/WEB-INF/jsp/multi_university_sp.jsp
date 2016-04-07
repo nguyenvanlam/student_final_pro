@@ -11,8 +11,10 @@
 		<li><a href="#"><span>Thông tin</span></a></li>
 		<li><a href="#"><span>Danh sách trường học</span></a>
 			<ul>
-				<li><a href="#"><span>DH Quốc Gia Hà Nội</span></a></li>
-				<li><a href="#"><span>DH Bách Khoa Hà Nội</span></a></li>
+				<li><a href="${baseUrl}/view/1"><span>Đại học GTVT Hà Nội</span></a></li>
+				<li><a href="${baseUrl}/view/2"><span>ĐH Quốc Gia Hà Nội</span></a></li>
+				<li><a href="${baseUrl}/view/3"><span>ĐH Sư Phạm Hà Nội</span></a></li>
+				<li><a href="#"><span>ĐH Bách Khoa Hà Nội</span></a></li>
 			</ul>
 		</li>
 		<li><a href="#"><span>Liên lạc</span></a>

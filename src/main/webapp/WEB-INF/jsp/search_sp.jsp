@@ -13,7 +13,7 @@
 <body>
 <div id="tfheader-sp">
 <br/>
-	<form id="tfnewsearch-sp" action="/student_final_pro/search" method="post">
+	<form id="tfnewsearch-sp" action="${baseUrl}/search" method="post">
 		<input type="hidden" id = "func" name = "func" value = "0">
 		<table class = "tbl-sp">
 			<th><span>Tìm kiếm</span></th>

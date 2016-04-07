@@ -14,7 +14,7 @@
 <div id="tfheader">
 
 <br/>
-	<form id="tfnewsearch" action="/student_final_pro/search" method="post">
+	<form id="tfnewsearch" action="${baseUrl}/search" method="post">
 		<input type="hidden" id = "func" name = "func" value = "0">
 		<table>
 			<th><span>Tìm kiếm</span></th>

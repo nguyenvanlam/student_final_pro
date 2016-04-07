@@ -1,5 +1,7 @@
 package net.nguyenlam.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import net.nguyenlam.utils.Constants;
 
 import org.springframework.mobile.device.Device;
@@ -17,5 +19,16 @@ public class BaseController {
 		} else {
 			return Constants.MAP_PC;
 		}
+	}
+	
+	protected String getBaseUrl(HttpServletRequest request) {
+		String baseUrl = "http://";
+		//get base name
+		baseUrl += request.getLocalName();
+		//port
+		baseUrl += ":8080";
+		//get context path
+		baseUrl += request.getContextPath();
+		return baseUrl;
 	}
 }

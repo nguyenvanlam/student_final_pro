@@ -26,6 +26,7 @@ public class MapDaoImpl extends ConnectionDaoImpl implements MapDao {
 				+ Constants.COORD_Y;
 				sql += " FROM " + Constants.TBL_COMMON_COORDS;
 				sql += " WHERE " + Constants.COMMON_TYPE + " = " + Constants.COMMON_TYPE_BUILDING;
+				sql += " AND " + Constants.ID_UNIVERSITY + " = " + idUniversity;
 				sql += " ORDER BY " + Constants.COMMON_NAME + ", " + Constants.ID;
 				preparedStatement = connection.prepareStatement(sql);
 				resultSet = preparedStatement.executeQuery();
