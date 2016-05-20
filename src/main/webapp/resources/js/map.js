@@ -46,6 +46,10 @@ var map;
 var temp = [];
 var arr = [];
 var arrLine = [];
+var polyBuilding = [];
+var iPolyB = 0;
+var polyLine = [];
+var iPolyL = 0;
 
 var marker2 =  new google.maps.Marker({
 	position : {lat:0, lng: 0},
@@ -81,11 +85,21 @@ var optionLine = {
 	strokeWeight : 5
 };
 //--------------end gobal-----------
-
+function drawWay(path) {
+	var optionWay = {
+			path : path,
+			geodesic : true,
+			strokeColor : '#d02090',
+			strokeOpacity : 1.0,
+			strokeWeight : 5
+	};
+	var tempW = new google.maps.Polyline(optionWay);
+	tempW.setMap(map);
+}
 //ve duong di
-function drawPolyline() {
-	var line = new google.maps.Polyline(optionLine);
-	line.setMap(map);
+function drawPolyline(index) {
+	polyLine[index] = new google.maps.Polyline(optionLine);
+	polyLine[index].setMap(map);
 }
 //ve cac duong di
 function drawLines() {
@@ -104,7 +118,7 @@ function drawLines() {
 				};
 			} else {
 				optionLine.path = temp;
-				drawPolyline(optionLine);
+				drawPolyline(iPolyL++);
 				it = 0;
 				temp = [];
 				temp[it++] = {
@@ -115,15 +129,21 @@ function drawLines() {
 		}
 		if (it > 0) {
 			optionLine.path = temp;
-			drawPolyline(optionLine);
+			drawPolyline(iPolyL++);
 		}
 
 	}
 }
+//remove polyline
+function removePolyline() {
+	for(var i = 0; i < iPolyL; i++) {
+		polyLine[i].setMap(null);
+	}
+}
 //ve toa nha
-function drawPolygon() {
-	var poly = new google.maps.Polygon(options);
-	poly.setMap(map);
+function drawPolygon(index) {
+	polyBuilding[index] = new google.maps.Polygon(options);
+	polyBuilding[index].setMap(map);
 }
 //ve cac toa nha
 function drawShapes() {
@@ -142,7 +162,7 @@ function drawShapes() {
 				};
 			} else {
 				options.paths = temp;
-				drawPolygon(options);
+				drawPolygon(iPolyB++);
 				it = 0;
 				temp = [];
 				temp[it++] = {
@@ -153,8 +173,14 @@ function drawShapes() {
 		}
 		if (it > 0) {
 			options.paths = temp;
-			drawPolygon(options);
+			drawPolygon(iPolyB++);
 		}
+	}
+}
+//remove building
+function removeBuilding() {
+	for(var i = 0; i < iPolyB; i++) {
+		polyBuilding[i].setMap(null);
 	}
 }
 //clear all building label
@@ -178,7 +204,7 @@ function init(idmap, sizeZoom) {
 		zoom : sizeZoom,
 		//mapTypeControl : false,
 		center : latlng,
-		mapTypeId : google.maps.MapTypeId.TERRAIN,
+		mapTypeId : google.maps.MapTypeId.SATELLITE,
 		styles: [{ featureType: "all", elementType: "labels", stylers: [{ visibility: "off" }]}]
 	
 	};

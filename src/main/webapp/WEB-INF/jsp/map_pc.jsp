@@ -169,9 +169,7 @@
 			google.maps.event.addListener(map, 'click', function(event) {
 		         getCoord(event, polygon, map);
 		    });
-			optionLine.path = way;
-			optionLine.strokeColor = '#d02090';
-			drawPolyline();
+			drawWay(way);
 		});
 		
 		setTimeout(function() {
@@ -186,6 +184,16 @@
 					setAllLabel(arrBuildingLabel);
 				}
 			});
+			google.maps.event.addListener( map, 'maptypeid_changed', function() { 
+			    if(google.maps.MapTypeId.SATELLITE == map.getMapTypeId()) {
+			    	console.log("detect maptype change");
+			    	removeBuilding();
+			    	removePolyline();
+			    } else {
+			    	drawShapes();
+			    	drawLines();
+			    }
+			} );
 			//drawPoint(arrLineOb);
 		}, 1000);
 	</script>

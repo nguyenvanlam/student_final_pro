@@ -172,9 +172,7 @@
 			google.maps.event.addListener(map, 'click', function(event) {
 		         getCoord(event, polygon, map);
 		    });
-			optionLine.path = way;
-			optionLine.strokeColor = '#d02090';
-			drawPolyline();
+			drawWay(way);
 		});
 		
 		setTimeout(function() {
