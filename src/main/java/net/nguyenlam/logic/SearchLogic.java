@@ -17,16 +17,6 @@ import net.nguyenlam.utils.Common;
  *
  */
 public class SearchLogic {
-	/**
-	 * get info for searching
-	 * 
-	 * @param idUniversity
-	 * @return
-	 */
-	public List<String> getInfo(int idUniversity) {
-		SearchDaoImpl searchImpl = new SearchDaoImpl();
-		return searchImpl.getData(idUniversity);
-	}
 	
 	/**
 	 * find way from s to f
@@ -44,7 +34,6 @@ public class SearchLogic {
 		//get id of line in DB closest to s and f
 		int sId = mapImpl.getClosest(lsLineOb, s);
 		int fId = mapImpl.getClosest(lsLineOb, f);
-		System.out.println("Sid: " + sId + ", fId: " + fId);
 		if(sId == 0 || fId == 0) {
 			return lsCoord;
 		}
@@ -59,7 +48,11 @@ public class SearchLogic {
 		posIdToArr = alg.getPosIdToArr();
 		alg.getWay(posIdToArr[sId], posIdToArr[fId]);
 		result = alg.getResult();
+		System.out.println("result");
 		rSize = alg.getrSize();
+		for(int j = 0; j <= rSize; j++) {
+			System.out.print(result[j] + "->");
+		}
 		for(int i = 0; i <= rSize; i++) {
 			Coordinates c = new Coordinates(lsLineOb.get(posIdToArr[result[i]]).getCoord().getX(),
 					lsLineOb.get(posIdToArr[result[i]]).getCoord().getY());
@@ -83,8 +76,8 @@ public class SearchLogic {
 		List<Line> lsLineOb = mapLogic.getLineObj(idUniversity);
 		List<Coordinates> lsPos = new ArrayList<Coordinates>();
 		map.addObject("lsLineOb", lsLineOb);
-		// get coord, if is coord
 		
+		// get coord, if it is coord
 		lsPos.add(handlePosition(pos1, idUniversity));
 		lsPos.add(handlePosition(pos2, idUniversity));
 		
@@ -94,6 +87,8 @@ public class SearchLogic {
 			lsWay = findWay(lsPos.get(0), lsPos.get(1) , idUniversity, lsLineOb);
 			map.addObject("lsway", lsWay);
 		}
+		
+		
 		return lsPos;
 	}
 	

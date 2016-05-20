@@ -39,10 +39,9 @@ public class MapLogic {
 		Coordinates c = new Coordinates();
 		
 		//get info for searching
-		SearchLogic searchLogic = new SearchLogic();
+		SearchDaoImpl searchImpl = new SearchDaoImpl();
 		List<String> lsLabel = new ArrayList<String>();
-		lsLabel = searchLogic.getInfo(idUniversity);
-		
+		lsLabel = searchImpl.getSearchLabel(idUniversity);
 		//get map center
 		c = mapImpl.getMapCenter(idUniversity);
 		
@@ -71,9 +70,11 @@ public class MapLogic {
 	 */
 	private void formatRelationStr(List<Line> lsLineOb) {
 		for (Line line : lsLineOb) {
-			String temp = removeChar(line.getRelation());
-			temp = removeSpace(temp);
-			line.setRelation(temp); 
+			if(line.getRelation() != null) {
+				String temp = removeChar(line.getRelation());
+				temp = removeSpace(temp);
+				line.setRelation(temp); 
+			}
 		}
 	}
 	/**

@@ -103,17 +103,22 @@ public class Algorithm {
 		for(i = 0; i < lsLine.size(); i++) {
 			//get relation
 			String rela = lsLine.get(i).getRelation();
-			//split for each id 
-			String[] arrRela = rela.split(" ");
-			//get id for ele i th
-			int key = lsLine.get(i).getId();
-			for(j = 0; j < arrRela.length; j++) {
-				
-				//compute distance from line[i] to each rela[j]
-				floyd[posIdToArr[key]][posIdToArr[Common.toInt(arrRela[j])]] = Common.distance(lsLine.get(i).getCoord(), 
-						lsLine.get(posIdToArr[Common.toInt(arrRela[j])]).getCoord());
+			if (rela != null && !"".equals(rela)) {
+				// split for each id
+				String[] arrRela = rela.split(" ");
+				// get id for ele i th
+				int key = lsLine.get(i).getId();
+				for (j = 0; j < arrRela.length; j++) {
+
+					// compute distance from line[i] to each rela[j]
+					floyd[posIdToArr[key]][posIdToArr[Common.toInt(arrRela[j])]] = Common
+							.distance(
+									lsLine.get(i).getCoord(),
+									lsLine.get(
+											posIdToArr[Common.toInt(arrRela[j])])
+											.getCoord());
+				}
 			}
-			
 		}
 		
 		//if missing 
@@ -121,7 +126,7 @@ public class Algorithm {
 			for(j = 0; j <= size; j++) {
 				if(floyd[i][j] != -1) {
 					floyd[j][i] = floyd[i][j];
-					break;
+					//break;
 				}
 				if(floyd[j][i] != -1) {
 					floyd[i][j] = floyd[j][i];

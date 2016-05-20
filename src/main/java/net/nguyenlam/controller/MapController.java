@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import net.nguyenlam.entities.Line;
 import net.nguyenlam.logic.MapLogic;
-import net.nguyenlam.utils.Constants;
 
 import org.springframework.mobile.device.Device;
 import org.springframework.stereotype.Controller;
@@ -38,6 +37,11 @@ public class MapController extends BaseController{
 		mapView.addObject("baseUrl", baseUrl);
 		session.setAttribute("id_university", idUniversity);
 		return mapView;
+	}
+	
+	@RequestMapping(value = "/")
+	public String redirect() {
+		return "redirect:/view/1";
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)

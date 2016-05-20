@@ -12,7 +12,7 @@ public interface SearchDao {
 	 * 
 	 * @return list string: list of label for search in UTC
 	 */
-	public List<String> getData(int id_university);
+	public List<String> getSearchLabel(int id_university);
 	/**
 	 * get coord by label to find the way
 	 * 
