@@ -46,3 +46,7 @@ ul:after {
 }
  
 ul:after { clear: both; }
+
+#menu-sp {
+	 padding-top: 1cm;
+}

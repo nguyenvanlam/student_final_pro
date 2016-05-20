@@ -1,3 +1,9 @@
+var marker1 =  new google.maps.Marker({
+	position : {lat:0, lng: 0},
+	label: "1",
+	map : null,
+});
+var count = 0;
 //locating for your location
 function locate() {
 	if (navigator.geolocation) {
@@ -12,10 +18,17 @@ function locate() {
 			});
 			infoWindow.setPosition(p);
 			infoWindow.setContent('Location found.');
-			//map.setCenter(p);
+			marker1.setPosition(p);
+			var pos1 = document.getElementById("pos1");
+		//	pos1.value = (Math.round(p.lat * 1000000) / 1000000) + ", "
+		//	+ (Math.round(p.lng * 1000000) / 1000000);
+			pos1.value = (p.lat + ", "
+			+ p.lng);
+			marker1.setMap(map);
+			count = 1;
 		}, function() {
 			handleLocationError(false, infoWindow, map.getCenter());
-		});
+		}, {maximumAge:600000, timeout:5000, enableHighAccuracy: true});
 	}
 }
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -28,16 +41,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 					: 'Error: Your browser doesn\'t support geolocation.');
 }
 //-------------gobal val----------------
-var count = 0;
+
 var map;
 var temp = [];
 var arr = [];
 var arrLine = [];
-var marker1 =  new google.maps.Marker({
-	position : {lat:0, lng: 0},
-	label: "1",
-	map : null,
-});
+
 var marker2 =  new google.maps.Marker({
 	position : {lat:0, lng: 0},
 	label: "2",
@@ -167,9 +176,11 @@ function init(idmap, sizeZoom) {
 	var latlng = new google.maps.LatLng(21.030689, 105.794304);
 	var myOptions = {
 		zoom : sizeZoom,
-		mapTypeControl : false,
+		//mapTypeControl : false,
 		center : latlng,
-		mapTypeId : google.maps.MapTypeId.TERRAIN
+		mapTypeId : google.maps.MapTypeId.TERRAIN,
+		styles: [{ featureType: "all", elementType: "labels", stylers: [{ visibility: "off" }]}]
+	
 	};
 	map = new google.maps.Map(document.getElementById(idmap), myOptions);
 	drawShapes();
@@ -225,7 +236,7 @@ function drawPoint(arrLineOb) {
 	}
 }
 
-function getCoord(e, polygon, map1) {
+function getCoord(e, polygon) {
 	var myLatLng = e.latLng;
     var lat1 = myLatLng.lat();
     var lng1 = myLatLng.lng();
@@ -238,14 +249,14 @@ function getCoord(e, polygon, map1) {
 			pos1.value = (Math.round(lat1 * 1000000) / 1000000) + ", "
 					+ (Math.round(lng1 * 1000000) / 1000000);
 			marker1.setPosition(pGoogle);
-			marker1.setMap(map1);
+			marker1.setMap(map);
 			count = 1;
 		} else {
 			marker2.setMap(null);
 			pos2.value = (Math.round(lat1 * 1000000) / 1000000) + ", "
 					+ (Math.round(lng1 * 1000000) / 1000000);
 			marker2.setPosition(pGoogle);
-			marker2.setMap(map1);
+			marker2.setMap(map);
 			count = 0;
 		}
 	}

@@ -13,6 +13,7 @@
  	<link rel="stylesheet" href='<c:url value="/resources/css/map.css" />'>
  	<link rel="stylesheet" href='<c:url value="/resources/css/search_box.css" />'>
  	<link rel="stylesheet" href='<c:url value="/resources/css/menu_sp.css" />'>
+ 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpVuerq95aDV5ETtwMkEAptrPqyNtXEsg"></script>
 	<script src='<c:url value="/resources/js/map.js" />'></script>
 	<script src='<c:url value="/resources/js/common.js" />'></script>
@@ -165,7 +166,8 @@
 		google.maps.event.addDomListener(window, 'load', function() {
 			
 			init("map-sp", 19);
-			
+			marker1.setMap(map);
+			marker2.setMap(map);
 			map.setCenter(gCenter);
 			google.maps.event.addListener(map, 'click', function(event) {
 		         getCoord(event, polygon, map);
@@ -200,7 +202,7 @@
 			 	lng: y
 			};
 			marker1.setPosition(ob);
-			marker1.setMap(map);
+			
 		</script>
 	</c:if>
 	<c:if test="${search2 != null}">
@@ -209,14 +211,24 @@
 			var y = ${search2.y};
 			var ob = new google.maps.LatLng(x, y);
 			marker2.setPosition(ob);
-			marker2.setMap(map);
+			
 		</script>
 	</c:if>
 </head>
 <body >
 	<div id = "floating-panel">
-		<jsp:include page="search_sp.jsp"></jsp:include>
-		<jsp:include page="multi_university_sp.jsp"></jsp:include>
+		<div>
+			<jsp:include page="search_sp.jsp"></jsp:include>
+		</div>
+		<div id ="menu-sp">
+			<jsp:include page="menu_sp.jsp"></jsp:include>
+		</div>
+		
+	</div>
+	<div id = 'location'>
+		<input type="button" class="btn btn-primary btn-lg" 
+		style = "width: 200px; height: 100px;font-size: 50px;"
+		onclick="locate()" value = "Định vị" />
 	</div>
 	<div id="map-sp" >
 	</div>

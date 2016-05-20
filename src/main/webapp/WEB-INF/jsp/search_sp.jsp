@@ -11,35 +11,36 @@
 <title>Search Way</title>
 </head>
 <body>
-<div id="tfheader-sp">
+<div id="tfheader">
 <br/>
 	<form id="tfnewsearch-sp" action="${baseUrl}/search" method="post">
 		<input type="hidden" id = "func" name = "func" value = "0">
-		<table class = "tbl-sp">
+		<table class = "">
 			<th><span>Tìm kiếm</span></th>
 			<tr>
 				<td><span>Điểm 1: </span></td>&nbsp;
 				<td>
-					<input class="tftextinput-sp" type ="text" value = "" name = "pos1" id="pos1" 
-					placeholder = "entry pos 1"/>
-				</td>&nbsp;
-				<td>
+					<input class="form-control input-lg" type ="text" value = "" name = "pos1" id="pos1" 
+					placeholder = "Nhập điểm 1" style="font-size: 30px;"/>
+				</td>
+				<td style="padding:0 20px 0 20px;">
 					<input type="submit" value = "Tìm đường" name="way" 
 						onclick="document.getElementById('func').value = '1';"
-							class="tfbutton-sp"
+							class="btn-primary btn btn-lg"
 					>	
 				</td>
 			</tr>
 			
-			<tr>
-				<td><span>Điểm 2: </span></td>&nbsp;
+			<tr >
+				<td style="padding:5px 0px 0 0px;"><span>Điểm 2: </span></td>&nbsp;
 				<td>
-					<input type ="text" value = "" name = "pos2" id = "pos2" placeholder = "entry pos 2"
-					class="tftextinput-sp"/>&nbsp;
+					<input type ="text" value = "" name = "pos2" id = "pos2" placeholder = "Nhập điểm 2"
+					style="font-size: 30px;"
+					class="form-control input-lg"/>
 				</td>
-				<td>
+				<td style="padding:5px 20px 0 20px;">
 					<input type="submit" value = "Thông tin" name ="search"
-					class="tfbutton-sp"
+					class="btn-primary btn btn-lg "  style ="width: 120px;"
 						onclick="document.getElementById('func').value = '2';"
 					>
 				</td>
