@@ -5,19 +5,27 @@ html,body {
 }
 
 #floating-panel {
-	height: 20%;
-	width:100%;
+/* 	height: 20%; */
+ 	width:100%; 
 	position: absolute;
 	top: 10px;
 	left: 0%;
 	z-index: 5;
-	background-color: #fff;
+	background-color: #c3dfef;
 	padding: 5px;
 	border: 1px solid #999;
 	text-align: center;
 	font-family: 'Roboto', 'sans-serif';
 	line-height: 30px;
 	padding-left: 10px;
+}
+#location {
+	position: absolute;
+ 	bottom: 5px;
+    right: 35%; 
+	z-index: 5;
+	font-size-adjust: 0.58;
+
 }
 
 #pos1,#pos2 {
@@ -39,7 +47,24 @@ html,body {
 	-webkit-transform: rotate(38deg); /* Chrome, Safari, Opera */
 	transform: rotate(38deg);
 }
-
+.nghieng0-neu {
+	max-width: 30px;
+	background: null;
+	color: yellow;
+	position: absolute;
+	-ms-transform: rotate(0deg); /* IE 9 */
+	-webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+	transform: rotate(0deg);
+}
+.nghieng0-neu-px {
+	max-width: 100px;
+	background: null;
+	color: yellow;
+	position: absolute;
+	-ms-transform: rotate(0deg); /* IE 9 */
+	-webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+	transform: rotate(0deg);
+}
 .nghieng315 {
 	max-width: 30px;
 	background: null;
