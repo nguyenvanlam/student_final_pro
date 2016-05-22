@@ -55,17 +55,18 @@ public class MapDaoImpl extends ConnectionDaoImpl implements MapDao {
 		try {
 			if(connectToDB()) {
 				String sql = "";
-				sql += "SELECT " + Constants.ID + ", " + Constants.LINE_NAME + ", " + Constants.COORD_X + ", " +
+				sql += "SELECT " + Constants.ID + ", " + Constants.COMMON_NAME + ", " + Constants.COORD_X + ", " +
 				Constants.COORD_Y;
-				sql += " FROM " + Constants.TBL_LINE_COORDS;
+				sql += " FROM " + Constants.TBL_COMMON_COORDS;
 				sql += " WHERE " + Constants.ID_UNIVERSITY + " = " + idUniversity;
-				sql += " ORDER BY " + Constants.LINE_NAME+ ", " + Constants.ID;
+				sql += " AND " + Constants.COMMON_TYPE + " = " + Constants.COMMON_TYPE_LINE;
+				sql += " ORDER BY " + Constants.COMMON_NAME + ", " + Constants.ID;
 				preparedStatement = connection.prepareStatement(sql);
 				resultSet = preparedStatement.executeQuery();
 				if(resultSet != null) {
 					while(resultSet.next()) {
 						if(resultSet.getDouble(Constants.COORD_X) != 0) {
-							CommonCoords c = new CommonCoords(resultSet.getString(Constants.LINE_NAME), 
+							CommonCoords c = new CommonCoords(resultSet.getString(Constants.COMMON_NAME), 
 									resultSet.getDouble(Constants.COORD_X), resultSet.getDouble(Constants.COORD_Y));
 							lsCoord.add(c);
 						}
@@ -151,18 +152,19 @@ public class MapDaoImpl extends ConnectionDaoImpl implements MapDao {
 		try {
 			if(connectToDB()) {
 				String sql = "";
-				sql += "SELECT "+ Constants.ID + ", " + Constants.LINE_NAME + ", " + Constants.COORD_X + ", " 
-				+ Constants.COORD_Y + ", " + Constants.RELATION;
-				sql += " FROM " + Constants.TBL_LINE_COORDS;
+				sql += "SELECT "+ Constants.ID + ", " + Constants.COMMON_NAME + ", " + Constants.COORD_X + ", " 
+				+ Constants.COORD_Y + ", " + Constants.COMMON_OTHER;
+				sql += " FROM " + Constants.TBL_COMMON_COORDS;
 				sql += " WHERE " + Constants.ID_UNIVERSITY + " = " + idUniversity;
-				sql += " ORDER BY " + Constants.LINE_NAME+ ", " + Constants.ID;
+				sql += " AND " + Constants.COMMON_TYPE + " = " + Constants.COMMON_TYPE_LINE;
+				sql += " ORDER BY " + Constants.COMMON_NAME + ", " + Constants.ID;
 				preparedStatement = connection.prepareStatement(sql);
 				resultSet = preparedStatement.executeQuery();
 				if(resultSet != null) {
 					while(resultSet.next()) {
-						CommonCoords c = new CommonCoords(resultSet.getString(Constants.LINE_NAME), 
+						CommonCoords c = new CommonCoords(resultSet.getString(Constants.COMMON_NAME), 
 								resultSet.getDouble(Constants.COORD_X), resultSet.getDouble(Constants.COORD_Y));
-						Line l = new Line(c, resultSet.getInt(Constants.ID), resultSet.getString(Constants.RELATION));
+						Line l = new Line(c, resultSet.getInt(Constants.ID), resultSet.getString(Constants.COMMON_OTHER));
 						lsLine.add(l);
 					}
 				}
@@ -202,7 +204,6 @@ public class MapDaoImpl extends ConnectionDaoImpl implements MapDao {
 				sql += " FROM " + Constants.TBL_COMMON_COORDS;
 				sql += " WHERE " + Constants.COMMON_TYPE + " = " + Constants.COMMON_TYPE_AREA;
 				sql += " AND " + Constants.ID_UNIVERSITY + " = " + idUniversity;
-				System.out.println("sql in getArea: " + sql);
 				preparedStatement = connection.prepareStatement(sql);
 				resultSet = preparedStatement.executeQuery();
 				if(resultSet != null) {

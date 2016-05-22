@@ -11,7 +11,7 @@ import net.nguyenlam.utils.Algorithm;
 import net.nguyenlam.utils.Constants;
 
 public class SearchDaoImpl extends ConnectionDaoImpl implements SearchDao{
-	public List<String> getData(int idUniversity) {
+	public List<String> getSearchLabel(int idUniversity) {
 		// TODO Auto-generated method stub
 		List<String> lsLabel = new ArrayList<String>();
 		try {
@@ -53,11 +53,11 @@ public class SearchDaoImpl extends ConnectionDaoImpl implements SearchDao{
 				sql += " ON " + Constants.TBL_SEARCH_INFO + "." + Constants.LABEL;
 				sql += "=" + Constants.TBL_SEARCH_LABEL + "." + Constants.LABEL;
 				sql += " WHERE " + Constants.TBL_SEARCH_LABEL + "." + 
-				Constants.LABEL + " = '" + label.get(0) + "'";
+				Constants.LABEL + " like '%" + label.get(0) + "%'";
 				for (int i = 1; i < label.size(); i++) {
 					if(!"".equals(label.get(i))) {
-						sql += " OR " + Constants.TBL_SEARCH_LABEL + "." + Constants.LABEL + " = '" 
-								+ label.get(i) + "'";
+						sql += " OR " + Constants.TBL_SEARCH_LABEL + "." + Constants.LABEL + " like '%" 
+								+ label.get(i) + "%'";
 					}
 				}
 				sql += " AND " + Constants.TBL_SEARCH_LABEL + "." + 
